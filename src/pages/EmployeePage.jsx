@@ -10,7 +10,7 @@ const EmployeePage = ({ employees }) => {
             <div className="container">
                 <div className="selected__employee--top">
                     <Link to="/">
-                        <button className="back__button"> &lt; Previos employee</button>
+                        <button className="back__button"> &lt; Home page</button>
                     </Link>
                 </div>
                 <div className="employee__description">

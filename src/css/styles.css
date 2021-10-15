@@ -118,6 +118,41 @@ main {
           flex-direction: column;
 }
 
+.team__member--img--skeleton {
+  margin: 48px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #e3e3e3;
+  -webkit-box-shadow: 0 1px 32px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 32px rgba(0, 0, 0, 0.5);
+}
+
+.skeleton {
+  background-color: #e3e3e3 !important;
+  margin-bottom: 8px;
+}
+
+.employee__title--skeleton {
+  height: 21px;
+  width: 100%;
+}
+
+.employee__department--skeleton {
+  width: 100px;
+  height: 19px;
+}
+
+.employee__email--skeleton {
+  width: 200px;
+  height: 19px;
+}
+
+.view__details--skeleton {
+  width: 200px;
+  height: 40px;
+}
+
 .team__member--img--mask {
   width: 100%;
   max-width: 200px;
