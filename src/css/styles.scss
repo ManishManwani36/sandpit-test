@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body{
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: #888888;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+//          MAIN
+
+main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h3 {
+        font-weight: 400;
+    }
+    
+    .team__desc{
+        max-width: 600px;
+        margin: 16px;
+
+        h1{
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        p{
+            font-weight: 300;
+            letter-spacing: 0.03em;
+        }
+    }
+    
+    
+    
+    
+}
+
+
+@media screen and (max-width: 1300px) {
+    .container {
+        .employee__description{
+            .team__member--img--mask { 
+                max-width: 300px;
+                max-height: 300px;
+            }
+
+            h4 {
+                font-size: 32px;
+            }
+    
+            .team__member--email{
+                font-size: 14px;
+            }
+    
+            .team__member--department{
+                padding: 0;
+                font-size: 18px;
+                letter-spacing: 0.2em;
+                
+            }
+    
+            p {
+                padding: 12px 0;
+                font-size: 14px;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+.team, .more__employees {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .team__member {
+        margin: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+.team__member--img--mask {
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    max-height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 32px rgba(0, 0, 0, 0.5);
+}
+
+.team__member--img{
+    transition: all 300ms ease;
+}
+
+.team__member--img:hover {
+    transform: scale(1.1);
+}
+
+h4 {
+    margin: 6px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #3b3b3b;
+}
+
+p {
+    margin: 0px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.team__member--email {
+    padding: 10px 0;
+    position: relative;
+    color: #367483;
+}
+
+.link__hover--effect:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: #367483;
+    width: 0%;
+    bottom: 5px;
+    right: 0;
+    transition: all 300ms ease;
+}
+
+.link__hover--effect:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.selected__employee--top{
+    margin-top: 24px;
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    align-items: flex-start;
+}
+
+
+
+.team__member--details-button, .back__button{
+    margin: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    background-color: #20454e;
+    border: 2px solid #367483;
+    color: #d6d6d6;
+    max-width: 240px;
+    padding: 8px 16px;
+    font-size: 20px;
+    transition: all 300ms ease;
+}
+
+.team__member--details-button:hover , .back__button:hover {
+    border-color: #387483;
+    background-color: #387483;
+    cursor: pointer;
+}
+
+.team__member--details-button:active , .back__button:active{
+    border-color:  #20454e;
+    color:  #ffffff;
+}
+
+.back__button {
+    margin: 40px;
+}
+
+.employee__description{
+    margin: 24px;
+    display: flex;
+    align-items: center;
+    text-align: start;
+
+    .employee__description--box{
+        max-width: 800px;
+    }
+
+    .team__member--img--mask {
+        max-width: 500px;
+        min-width: 240px;
+        max-height: 500px;
+        min-height: 240px;
+    }
+
+    h4 {
+        font-size: 48px;
+    }
+
+    .team__member--email{
+        font-size: 24px;
+    }
+
+    .team__member--department{
+        font-size: 24px;
+        letter-spacing: 0.2em;
+        
+    }
+
+    p {
+        padding: 24px 0;
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        .employee__description{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+}
+
