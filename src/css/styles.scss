@@ -36,15 +36,20 @@ main {
 
     h3 {
         font-weight: 400;
+        animation: fade-up 300ms 100ms backwards;
+        margin: 0;
+        margin-top: 40px;
+        
     }
     
     .team__desc{
         max-width: 600px;
-        margin: 16px;
+        margin: 24px;
+        animation: fade-up 400ms 150ms backwards;
 
         h1{
-            font-weight: 500;
-            margin: 0;
+            font-weight: 600;
+            margin: 0 16px 16px 16px;
         }
         
         p{
@@ -52,12 +57,22 @@ main {
             letter-spacing: 0.03em;
         }
     }
-    
-    
-    
-    
+      
 }
 
+@keyframes fade-up {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
 
 @media screen and (max-width: 1300px) {
     .container {
@@ -101,11 +116,12 @@ main {
     flex-wrap: wrap;
 
     .team__member {
-        margin: 8px;
+        margin: 8px 16px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        animation: fade-up 400ms 150ms backwards;
     }
 }
 
@@ -146,6 +162,7 @@ main {
 }
 
 .team__member--img--mask {
+    margin: 32px;
     width: 100%;
     max-width: 200px;
     height: 100%;
@@ -209,8 +226,6 @@ p {
     align-items: flex-start;
 }
 
-
-
 .team__member--details-button, .back__button{
     margin: 16px;
     font-family: 'Inter', sans-serif;
@@ -224,6 +239,8 @@ p {
     transition: all 300ms ease;
 }
 
+
+
 .team__member--details-button:hover , .back__button:hover {
     border-color: #387483;
     background-color: #387483;
@@ -236,7 +253,7 @@ p {
 }
 
 .back__button {
-    margin: 40px;
+    margin: 0 24px;
 }
 
 .employee__description{

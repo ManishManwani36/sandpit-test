@@ -44,21 +44,57 @@ main {
 
 .container h3 {
   font-weight: 400;
+  -webkit-animation: fade-up 300ms 100ms backwards;
+          animation: fade-up 300ms 100ms backwards;
+  margin: 0;
+  margin-top: 40px;
 }
 
 .container .team__desc {
   max-width: 600px;
-  margin: 16px;
+  margin: 24px;
+  -webkit-animation: fade-up 400ms 150ms backwards;
+          animation: fade-up 400ms 150ms backwards;
 }
 
 .container .team__desc h1 {
-  font-weight: 500;
-  margin: 0;
+  font-weight: 600;
+  margin: 0 16px 16px 16px;
 }
 
 .container .team__desc p {
   font-weight: 300;
   letter-spacing: 0.03em;
+}
+
+@-webkit-keyframes fade-up {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  80% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  80% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 @media screen and (max-width: 1300px) {
@@ -102,7 +138,7 @@ main {
 }
 
 .team .team__member, .more__employees .team__member {
-  margin: 8px;
+  margin: 8px 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -116,6 +152,8 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-animation: fade-up 400ms 150ms backwards;
+          animation: fade-up 400ms 150ms backwards;
 }
 
 .team__member--img--skeleton {
@@ -154,6 +192,7 @@ main {
 }
 
 .team__member--img--mask {
+  margin: 32px;
   width: 100%;
   max-width: 200px;
   height: 100%;
@@ -257,7 +296,7 @@ p {
 }
 
 .back__button {
-  margin: 40px;
+  margin: 0 24px;
 }
 
 .employee__description {
