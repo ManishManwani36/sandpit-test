@@ -2,29 +2,29 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const TeamMember = ({ employee }) => {
-    const [img, setImg] = useState();
+    // const [img, setImg] = useState();
 
-    const mountedRef = useRef(true);
+    // const mountedRef = useRef(true);
 
-    useEffect(() => {
-        const image = new Image();
-        image.src = employee.url;
-        image.onload = () => {
-            setTimeout(() => {
-                if (mountedRef.current) {
-                    setImg(image);
-                }
-            },300);
-        };
-        return () => {
-            mountedRef.current = false;
-        }
-    })
+    // useEffect(() => {
+    //     const image = new Image();
+    //     image.src = employee.url;
+    //     image.onload = () => {
+    //         setTimeout(() => {
+    //             if (mountedRef.current) {
+    //                 setImg(image);
+    //             }
+    //         },300);
+    //     };
+    //     return () => {
+    //         mountedRef.current = false;
+    //     }
+    // })
 
 
     return (
         <div className="team__member">
-            {
+            {/* {
                 img ? (
                     <>
                         <figure className="team__member--img--mask">
@@ -46,7 +46,7 @@ const TeamMember = ({ employee }) => {
                         <div className="skeleton view__details--skeleton"></div>
 
                     </>
-                    )}
+                    )} */}
         </div>
     );
 }

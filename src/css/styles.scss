@@ -1,10 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 body{
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     height: 100vh;
     margin: 0;
     padding: 0;
-    color: #888888;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    position: absolute;
+    border-radius: 50%;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1f1f1f;
+    border-radius: 4px;
 }
 
 html {
@@ -17,15 +40,17 @@ img{
 
 a{
     text-decoration: none;
+    overflow: hidden;
 }
 
 //          MAIN
 
 main {
     width: 100%;
-    max-width: 1400px;
     margin: 0 auto;
     text-align: center;
+    overflow: hidden;
+    height: 100vh;
 }
 
 .container {
@@ -35,80 +60,92 @@ main {
     flex-direction: column;
 
     h3 {
-        font-weight: 400;
-        animation: fade-up 300ms 100ms backwards;
+        font-weight: 600;
+        font-size: 300px;
+        width: 100vw;
+        animation: fade-up 800ms 100ms backwards;
+        padding: 80px 10px 0 10px;
         margin: 0;
-        margin-top: 40px;
-        
+
     }
     
     .team__desc{
-        max-width: 600px;
-        margin: 24px;
-        animation: fade-up 400ms 150ms backwards;
+        width: 100vw;
+        margin: 0px;
+        animation: fade-up 1200ms 250ms backwards;
+        
 
         h1{
+            margin-top: 0;
             font-weight: 600;
-            margin: 0 16px 16px 16px;
+            font-size: 80px;
+            padding: 0 16px;
         }
         
         p{
-            font-weight: 300;
+            font-weight: 200;
             letter-spacing: 0.03em;
+            color: white;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        h3{
+            margin: 40px auto;
+            padding: 0;
+            font-size: 20px;
+            color: #ffffff;
+            animation: scroll 2800ms 250ms infinite ease-in-out;
         }
     }
       
 }
 
-@keyframes fade-up {
+@keyframes scroll {
     0% {
-        transform: scale(0);
+        transform: translateY(0%);
     }
 
-    80% {
-        transform: scale(1.1);
+    15% {
+        transform: translateY(70%);
+    }
+
+    30% {
+        transform: translateY(0%);
+    }
+
+    70% {
+        transform: translateY(0%);
+    }
+
+    85% {
+        transform: translateY(100%);
     }
 
     100% {
-        transform: scale(1);
-    }
+        transform: translateY(0%);
+    } 
 }
 
-@media screen and (max-width: 1300px) {
-    .container {
-        .employee__description{
-            .team__member--img--mask { 
-                max-width: 300px;
-                max-height: 300px;
-            }
+@keyframes fade-up {
+    0% {
+        transform: translateY(30%);
+        opacity: 0;
+    }
 
-            h4 {
-                font-size: 32px;
-            }
-    
-            .team__member--email{
-                font-size: 14px;
-            }
-    
-            .team__member--department{
-                padding: 0;
-                font-size: 18px;
-                letter-spacing: 0.2em;
-                
-            }
-    
-            p {
-                padding: 12px 0;
-                font-size: 14px;
-                font-weight: 300;
-            }
-        }
+    70% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
 .team, .more__employees {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -116,49 +153,27 @@ main {
     flex-wrap: wrap;
 
     .team__member {
-        margin: 8px 16px;
+        margin: 24px 24px;
+        border-radius: 8px;
+        padding: 16px 32px;
+        width: 100%;
+        max-width: 258px;
+        height: 100%;
+        max-height: 446px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        animation: fade-up 400ms 150ms backwards;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+        transition: all 0.08s;
+	    -webkit-transition: all 0.08s;
     }
-}
 
-// SKELETON
-
-.team__member--img--skeleton {
-    margin: 48px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: rgb(227, 227, 227);
-    box-shadow: 0 1px 32px rgba(0, 0, 0, 0.5);
-}
-
-.skeleton {
-    background-color: rgb(227, 227, 227) !important;
-    margin-bottom: 8px;
-}
-
-.employee__title--skeleton {
-    height: 21px;
-    width: 100%;
-}
-  
-.employee__department--skeleton {
-    width: 100px;
-    height: 19px;
-}
-  
-.employee__email--skeleton {
-    width : 200px;
-    height: 19px;
-}
-
-.view__details--skeleton {
-    width : 200px;
-    height: 40px;
+    .team__member:hover {
+        transform: translate(0px,-2px);
+        -webkit-transform: translate(0px,-2px);
+    }
 }
 
 .team__member--img--mask {
@@ -172,7 +187,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 1px 32px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .team__member--img{
@@ -180,37 +195,41 @@ main {
 }
 
 .team__member--img:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 h4 {
     margin: 6px 0;
     font-size: 20px;
-    font-weight: 700;
-    color: #3b3b3b;
+    font-weight: 600;
+    color: #2b2b2b;
 }
 
 p {
     margin: 0px;
     font-size: 18px;
     line-height: 1.5;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: #747474;
 }
 
 .team__member--email {
     padding: 10px 0;
+    font-weight: 200;
     position: relative;
-    color: #367483;
+    color: #000000;
 }
 
 .link__hover--effect:after {
     content: "";
     position: absolute;
-    height: 1px;
-    background-color: #367483;
+    height: 2px;
+    background-color: #7c7c7c;
     width: 0%;
-    bottom: 5px;
+    bottom: 8px;
     right: 0;
-    transition: all 300ms ease;
+    transition: all 200ms ease;
 }
 
 .link__hover--effect:hover:after {
@@ -226,35 +245,39 @@ p {
     align-items: flex-start;
 }
 
-.team__member--details-button, .back__button{
-    margin: 16px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    background-color: #20454e;
-    border: 2px solid #367483;
-    color: #d6d6d6;
+
+.team__member--details-button{
+	position: relative;
+	padding: 10px 40px;
+    margin: 10px 10px 10px 10px;
+    float: left;
+	border-radius: 4px;
+	color: rgb(255, 255, 255);
+	text-decoration: none;	
+    background-color: #2e2e2e;
+	border-bottom: 8px solid #1f1f1f;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
     max-width: 240px;
-    padding: 8px 16px;
     font-size: 20px;
-    transition: all 300ms ease;
+    transition: all 0.08s;
+	-webkit-transition: all 0.08s;
 }
 
-
-
-.team__member--details-button:hover , .back__button:hover {
-    border-color: #387483;
-    background-color: #387483;
+.team__member--details-button:hover {
+    transform: translate(0px,-2px);
+    -webkit-transform: translate(0px,-2px);
     cursor: pointer;
 }
 
-.team__member--details-button:active , .back__button:active{
-    border-color:  #20454e;
-    color:  #ffffff;
+.team__member--details-button:active{
+	transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+    cursor: no-drop;
 }
 
-.back__button {
-    margin: 0 24px;
-}
+
 
 .employee__description{
     margin: 24px;
@@ -293,6 +316,39 @@ p {
         font-weight: 300;
     }
 
+}
+
+
+@media screen and (max-width: 1300px) {
+    .container {
+        .employee__description{
+            .team__member--img--mask { 
+                max-width: 300px;
+                max-height: 300px;
+            }
+
+            h4 {
+                font-size: 32px;
+            }
+    
+            .team__member--email{
+                font-size: 14px;
+            }
+    
+            .team__member--department{
+                padding: 0;
+                font-size: 18px;
+                letter-spacing: 0.2em;
+                
+            }
+    
+            p {
+                padding: 12px 0;
+                font-size: 14px;
+                font-weight: 300;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
